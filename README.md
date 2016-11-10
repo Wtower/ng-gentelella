@@ -4,10 +4,10 @@ ng-gentelella
 [![NPM version][npm-image]][npm-url] 
 [![Dependency Status][daviddm-image]][daviddm-url] 
 
-[npm-image]: https://badge.fury.io/js/generator-makrina.svg
-[npm-url]: https://npmjs.org/package/generator-makrina
-[daviddm-image]: https://david-dm.org/Wtower/generator-makrina.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/Wtower/generator-makrina
+[npm-image]: https://badge.fury.io/js/ng-gentelella.svg
+[npm-url]: https://npmjs.org/package/ng-gentelella
+[daviddm-image]: https://david-dm.org/Wtower/ng-gentelella.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Wtower/ng-gentelella
 
 Easily create an administration interface using Angular components
 that are based on the markup by [Gentelella](https://github.com/puikinsh/gentelella)
