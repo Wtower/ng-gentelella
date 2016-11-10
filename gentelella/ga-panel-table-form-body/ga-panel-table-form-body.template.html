@@ -1,0 +1,13 @@
+<div data-toggle="collapse" data-target="#{{ $ctrl.bodyId }}" class="row accordion-toggle" ng-transclude="row"></div>
+<div id="{{ $ctrl.bodyId }}" class="row accordion-body collapse">
+  <div class="col-md-12">
+    <div ng-transclude="form"></div>
+    <div class="buttons row">
+      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-6 text-right">
+        <button type="button"
+                class="btn btn-xs"
+                ng-click="$ctrl.panelTableFormCtrl.deleteRecord($ctrl.bodyValue)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

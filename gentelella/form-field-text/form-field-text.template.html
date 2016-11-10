@@ -1,0 +1,19 @@
+<div class="form-group item"
+     ng-class="{bad: $ctrl.fieldForm && $ctrl.fieldName && !$ctrl.fieldForm[$ctrl.fieldName].$valid && !$ctrl.fieldForm[$ctrl.fieldName].$untouched}">
+  <label class="control-label col-md-{{ $ctrl.fieldLabelWidth || 3 }} col-sm-{{ $ctrl.fieldLabelWidth || 3 }} col-xs-12"
+         for="{{ $ctrl.fieldId }}">
+    {{ $ctrl.fieldLabel }} <span ng-if="$ctrl.fieldRequired" class="required">*</span>
+  </label>
+  <div class="col-md-{{ $ctrl.fieldWidth || 6 }} col-sm-{{ $ctrl.fieldWidth || 6 }} col-xs-12">
+    <input type="{{ $ctrl.fieldType }}"
+           id="{{ $ctrl.fieldId }}"
+           name="{{ $ctrl.fieldName }}"
+           class="form-control"
+           placeholder="{{ $ctrl.fieldPlaceholder }}"
+           ng-required="$ctrl.fieldRequired"
+           ng-pattern="$ctrl.pattern"
+           ng-change="$ctrl.onChange()"
+           ng-model="$ctrl.fieldValue">
+  </div>
+  <div ng-if="$ctrl.fieldAlert" class="alert">{{ $ctrl.fieldAlert }}</div>
+</div>

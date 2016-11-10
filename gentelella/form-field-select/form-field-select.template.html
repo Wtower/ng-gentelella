@@ -1,0 +1,34 @@
+<div class="form-group">
+  <label class="control-label col-md-{{ $ctrl.fieldLabelWidth || 3 }} col-sm-{{ $ctrl.fieldLabelWidth || 3 }} col-xs-12"
+         for="{{ $ctrl.fieldId }}">
+    {{ $ctrl.fieldLabel }} <span ng-if="$ctrl.fieldRequired" class="required">*</span>
+  </label>
+  <div class="col-md-{{ $ctrl.fieldWidth || 6 }} col-sm-{{ $ctrl.fieldWidth || 6 }} col-xs-12">
+    <select class="select2 select2-single form-control"
+            ng-if="!$ctrl.fieldMultiple"
+            id="{{ $ctrl.fieldId }}"
+            aria-hidden="true"
+            data-placeholder="{{ $ctrl.fieldPlaceholder }}"
+            data-allow-clear="{{ !$ctrl.fieldRequired }}"
+            ng-required="$ctrl.fieldRequired"
+            ng-change="$ctrl.onChange()"
+            ng-model="$ctrl.fieldValue"
+            ng-transclude>
+    </select>
+    <select class="select2 select2-multiple form-control"
+            ng-if="$ctrl.fieldMultiple"
+            multiple="multiple"
+            ng-attr-id="{{ $ctrl.fieldId }}"
+            aria-hidden="true"
+            data-placeholder="{{ $ctrl.fieldPlaceholder }}"
+            data-allow-clear="{{ !$ctrl.fieldRequired }}"
+            ng-required="$ctrl.fieldRequired"
+            ng-change="$ctrl.onChange()"
+            ng-model="$ctrl.fieldValue"
+            ng-transclude>
+    </select>
+  </div>
+  <div ng-if="$ctrl.fieldLink" class="label-link col-md-1">
+    <a href="{{ $ctrl.fieldLink }}"><i class="fa fa-external-link-square" title="{{ $ctrl.fieldLinkText }}"></i></a>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label class="control-label col-md-{{ $ctrl.fieldLabelWidth || 3 }} col-sm-{{ $ctrl.fieldLabelWidth || 3 }} col-xs-12">
+    {{ $ctrl.fieldLabel }}</label>
+  <div class="col-md-{{ $ctrl.fieldWidth || 6 }} col-sm-{{ $ctrl.fieldWidth || 6 }} col-xs-12">
+    <div class="checkbox" ng-transclude>
+      <label>
+        <input type="checkbox" id="{{ $ctrl.fieldId }}" ng-model="$ctrl.fieldValue" ng-change="$ctrl.onChange()">
+        {{ $ctrl.fieldPlaceholder }}
+      </label>
+    </div>
+  </div>
+</div>

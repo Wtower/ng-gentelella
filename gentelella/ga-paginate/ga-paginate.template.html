@@ -1,0 +1,45 @@
+<div class="row" xng-hide="$ctrl.paginateList.length < $ctrl.items">
+  <div class="pull-left">
+    <div class="dataTables_info" role="status" aria-live="polite">
+      <label for="paginate-{{ $ctrl.paginateId }}">
+        Showing {{ $ctrl.from + 1 }} to {{ $ctrl.to }} of {{ $ctrl.paginateList.length }} entries | show
+      </label>
+      <select id="paginate-{{ $ctrl.paginateId }}"
+              aria-controls="datatable"
+              class="input-xs"
+              ng-change="$ctrl.rePaginate()"
+              ng-model="$ctrl.items">
+        <option value="2">2</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+      <span ng-transclude></span>
+    </div>
+  </div>
+  <div class="pull-right">
+    <div class="dataTables_paginate paging_simple_numbers">
+      <ul class="pagination">
+        <li class="paginate_button previous" ng-class="{disabled: $ctrl.page == 1}">
+          <a href="" aria-controls="datatable" data-dt-idx="0" tabindex="0" ng-click="$ctrl.paginate($ctrl.page - 1)">Previous</a>
+        </li>
+        <li class="paginate_button"
+            ng-repeat="page in $ctrl.range($ctrl.pages)"
+            ng-class="{active: $ctrl.page == $index + 1}">
+          <a href=""
+             aria-controls="datatable"
+             ng-click="$ctrl.paginate($index + 1)"
+             data-dt-idx="{{ $index + 1 }}"
+             tabindex="{{ $index + 1}}">
+            {{ $index + 1 }}
+          </a>
+        </li>
+        <li class="paginate_button next" ng-class="{disabled: $ctrl.page == $ctrl.pages}">
+          <a href="" aria-controls="datatable" data-dt-idx="{{ $ctrl.pages + 1 }}" tabindex="{{ $ctrl.pages + 1 }}" ng-click="$ctrl.paginate($ctrl.page + 1)">Next</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+tr
+  &.ng-enter, &.ng-leave, &.ng-move
+    transition: 0.5s linear all
+
+  &.ng-enter, &.ng-move
+    opacity: 0
+    overflow: hidden
+
+  &.ng-enter.ng-enter-active, &.ng-move.ng-move-active
+    opacity: 1
+
+  &.ng-leave
+    opacity: 1
+    overflow: hidden
+
+    &.ng-leave-active
+      opacity: 0
+      padding-bottom: 0
+      padding-top: 0
+
+.view-frame
+  &.ng-enter
+    animation: 0.7s fade-in
+    z-index: 100
+
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fade-out
+  from
+    opacity: 1
+  to
+    opacity: 0

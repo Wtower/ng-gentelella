@@ -1,0 +1,20 @@
+<div class="form-group">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <button type="submit"
+            class="btn btn-success"
+            ng-disabled="!$ctrl.actionForm.$valid">Submit</button>
+    <a href="{{ $ctrl.actionCloseUrl }}"
+       class="btn btn-danger"
+       ng-if="$ctrl.actionForm.$dirty">Cancel</a>
+    <a href="{{ $ctrl.actionCloseUrl }}"
+       class="btn btn-primary"
+       ng-if="!$ctrl.actionForm.$dirty">Close</a>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 text-right">
+    <button type="button"
+            class="btn btn-sm"
+            ng-disabled="!$ctrl.actionAllowDelete"
+            ng-click="$ctrl.onDelete()">Delete</button>
+    <div ng-transclude></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="form-group">
+  <label class="control-label col-md-{{ $ctrl.fieldLabelWidth || 3 }} col-sm-{{ $ctrl.fieldLabelWidth || 3 }} col-xs-12"
+         for="{{ $ctrl.fieldId }}">
+    {{ $ctrl.fieldLabel || 'Image' }} <span ng-if="$ctrl.fieldRequired" class="required">*</span>
+  </label>
+  <div class="col-md-{{ $ctrl.fieldWidth || 9 }} col-sm-{{ $ctrl.fieldWidth || 9 }} col-xs-12">
+    <p class="thumbnail" ng-transclude>
+      <span ng-if="!$ctrl.fieldValue">No image uploaded. Select a file to upload below, <br>
+        and then submit the form to update.</span>
+      <img ng-if="$ctrl.fieldValue"
+           ng-src="{{ $ctrl.fieldMediaUrl }}/{{ $ctrl.fieldValue }}"
+           title="{{ $ctrl.fieldTitle }}"
+           alt="{{ $ctrl.fieldTitle }}">
+    </p>
+    <input type="file"
+           id="{{ $ctrl.fieldId }}"
+           class="form-control"
+           ngf-select="$ctrl.upload($file)"
+           ngf-accept="'image/*'">
+    <div class="progress" ng-if="($ctrl.progress > 0) && ($ctrl.progress < 100)">
+      <div class="progress-bar progress-bar-success"
+           data-transitiongoal="{{ $ctrl.progress }}"
+           aria-valuenow="{{ $ctrl.progress }}"
+           ng-attr-style="width: {{ $ctrl.progress }}%"></div>
+    </div>
+  </div>
+</div>

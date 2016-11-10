@@ -1,0 +1,16 @@
+<div class="x_panel">
+  <div class="x_title">
+    <h2>{{ $ctrl.panelTitle }} <small ng-if="$ctrl.panelSubTitle">{{ $ctrl.panelSubTitle }}</small></h2>
+    <ul class="nav navbar-right panel_toolbox">
+      <li ng-if="$ctrl.panelAddRecord">
+        <a title="Add record" ng-click="$ctrl.addRecord()"><i class="fa fa-plus"></i></a></li>
+      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+      <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+  <div class="x_content">
+    <div ng-transclude="head" class="head row"></div>
+    <div ng-transclude="body"></div>
+  </div>
+</div>
