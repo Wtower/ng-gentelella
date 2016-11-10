@@ -16,7 +16,6 @@
     "url": "https://github.com/Wtower/ng-gentelella/issues"
   },
   "homepage": "https://github.com/Wtower/ng-gentelella#README",
-  "private": true,
   "scripts": {},
   "dependencies": {
     "angular": "^1.5.7",

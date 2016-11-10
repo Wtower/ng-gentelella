@@ -1,6 +1,14 @@
 ng-gentelella
 =============
 
+[![NPM version][npm-image]][npm-url] 
+[![Dependency Status][daviddm-image]][daviddm-url] 
+
+[npm-image]: https://badge.fury.io/js/generator-makrina.svg
+[npm-url]: https://npmjs.org/package/generator-makrina
+[daviddm-image]: https://david-dm.org/Wtower/generator-makrina.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Wtower/generator-makrina
+
 Easily create an administration interface using Angular components
 that are based on the markup by [Gentelella](https://github.com/puikinsh/gentelella)
 bootstrap template.
@@ -78,7 +86,8 @@ In your application, render a gentelella default index page as you would.
 Replace the main page content markup with an angular `ng-view` as in [this example]
 (https://github.com/Wtower/generator-makrina/blob/v0.3.0/generators/app/templates/views/admin.ejs#L139).
 
-Then develop proper Angular dashboard, list and detail components as you would normally do,
+Then develop proper Angular dashboard, list and detail components 
+as you would [normally do](https://docs.angularjs.org/tutorial/step_04),
 and use the above components in their templates to automate development.
 
 Alternatives
