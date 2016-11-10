@@ -7,7 +7,7 @@
 angular
   .module('formFieldText')
   .component('formFieldText', {
-    templateUrl: 'javascripts/gentelella/form-field-text/form-field-text.template.html',
+    templateUrl: 'static/ng-gentelella/form-field-text/form-field-text.template.html',
     bindings: {
       fieldId: '@',
       fieldType: '@',

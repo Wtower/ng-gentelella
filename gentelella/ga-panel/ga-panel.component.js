@@ -7,7 +7,7 @@
 angular
   .module('gaPanel')
   .component('gaPanel', {
-    templateUrl: 'javascripts/gentelella/ga-panel/ga-panel.template.html',
+    templateUrl: 'static/ng-gentelella/ga-panel/ga-panel.template.html',
     bindings: {
       panelTitle: '@',
       panelSubTitle: '@',

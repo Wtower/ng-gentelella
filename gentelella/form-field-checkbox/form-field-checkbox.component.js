@@ -7,7 +7,7 @@
 angular
   .module('formFieldCheckbox')
   .component('formFieldCheckbox', {
-    templateUrl: 'javascripts/gentelella/form-field-checkbox/form-field-checkbox.template.html',
+    templateUrl: 'static/ng-gentelella/form-field-checkbox/form-field-checkbox.template.html',
     bindings: {
       fieldId: '@',
       fieldLabel: '@',

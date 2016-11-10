@@ -33,6 +33,10 @@ This offers a small panel with basic form buttons: Save, Close/cancel, delete.
 
 Automate the CRUD operations using gentelella's PNotify and default REST responses.
 
+### ga-paginate
+
+Provide a list paginator.
+
 ### form-field-text
 
 Render a standard gentelella form textbox.
@@ -51,6 +55,23 @@ Provide an image upload field. This relies on `ng-file-upload`.
 
 How to use
 ----------
+
+### Installation
+
+Use:
+
+    npm install -S ng-gentelella
+
+Then include the `node_modules/ng-gentelella/gentelella` js files in your html or build system (eg gulp).
+
+Also make the above folder public or have a build system copy its html files in order for the templates to
+be available for Angular. Expose them as `/static/gentelella`:
+
+```
+app.use('/static/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella', 'gentelella')));
+```
+
+### Develop
 
 In your application, render a gentelella default index page as you would.
 

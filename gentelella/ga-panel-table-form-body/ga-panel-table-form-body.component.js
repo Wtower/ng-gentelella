@@ -7,7 +7,7 @@
 angular
   .module('gaPanelTableFormBody')
   .component('gaPanelTableFormBody', {
-    templateUrl: 'javascripts/gentelella/ga-panel-table-form-body/ga-panel-table-form-body.template.html',
+    templateUrl: 'static/ng-gentelella/ga-panel-table-form-body/ga-panel-table-form-body.template.html',
     bindings: {
       bodyId: '@',
       bodyValue: '='
