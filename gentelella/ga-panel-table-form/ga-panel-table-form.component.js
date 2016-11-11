@@ -7,7 +7,7 @@
 angular
   .module('gaPanelTableForm')
   .component('gaPanelTableForm', {
-    templateUrl: 'staic/ng-gentelella/ga-panel-table-form/ga-panel-table-form.template.html',
+    templateUrl: 'static/ng-gentelella/ga-panel-table-form/ga-panel-table-form.template.html',
     bindings: {
       panelTitle: '@',
       panelSubTitle: '@',
