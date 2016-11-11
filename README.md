@@ -28,6 +28,8 @@ Components
 
 This is a main component that generates a simple gentelella panel.
 
+[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-list/templates/_object-name_-list.template.html)
+
 ### ga-panel-table-form
 
 `ga-panel-table-form` together with `ga-panel-table-form-body` offer a more advanced panel
@@ -38,9 +40,15 @@ a form for that record opens.
 
 This offers a small panel with basic form buttons: Save, Close/cancel, delete.
 
+[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-detail/templates/_object-name_-detail.template.html#L19)
+
 ### ga-resource
 
 Automate the CRUD operations using gentelella's PNotify and default REST responses.
+
+[Example in factory](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-core-service/templates/_object-name_.service.js)
+
+[Example of factory use in controller](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-detail/templates/_object-name_-detail.component.js.ejs#L14)
 
 ### ga-paginate
 
@@ -49,6 +57,8 @@ Provide a list paginator.
 ### form-field-text
 
 Render a standard gentelella form textbox.
+
+[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-detail/templates/_object-name_-detail.template.html#L11)
 
 ### form-field-select
 
