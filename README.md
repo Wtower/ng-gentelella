@@ -3,6 +3,7 @@ ng-gentelella
 
 [![NPM version][npm-image]][npm-url] 
 [![Dependency Status][daviddm-image]][daviddm-url] 
+[![npm](https://img.shields.io/npm/dt/ng-gentelella.svg?maxAge=2592000)](https://www.npmjs.com/package/ng-gentelella)
 
 [npm-image]: https://badge.fury.io/js/ng-gentelella.svg
 [npm-url]: https://npmjs.org/package/ng-gentelella
