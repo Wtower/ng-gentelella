@@ -54,6 +54,13 @@ Automate the CRUD operations using gentelella's PNotify and default REST respons
 
 Provide a list paginator.
 
+### ga-dashboard-counter
+
+Provide a large counter panel for dashboard as in 
+[Gentelella index2](https://colorlib.com/polygon/gentelella/index2.html). 
+
+[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-app/templates/dashboard/dashboard.template.html)
+
 ### form-field-text
 
 Render a standard gentelella form textbox.
