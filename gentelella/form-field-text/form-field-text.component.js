@@ -29,7 +29,7 @@ angular
         self.$onInit = function () {
           if (!self.fieldType) self.fieldType = 'text';
           // http://stackoverflow.com/questions/28731451/is-it-possible-to-use-ng-pattern-with-a-variable
-          self.pattern = new RegExp(self.fieldPattern);
+          if (self.fieldPattern) self.pattern = new RegExp(self.fieldPattern);
         }
       }
     ]
