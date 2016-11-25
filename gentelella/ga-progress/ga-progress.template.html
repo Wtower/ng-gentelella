@@ -1,0 +1,6 @@
+<div class="progress progress_{{ $ctrl.progressSize || 'sm' }}">
+  <div class="progress-bar bg-green"
+       data-transitiongoal="{{ $ctrl.progressValue }}"
+       aria-valuenow="{{ $ctrl.progressValue }}"
+       ng-style="{width: $ctrl.progressValue + '%'}"></div>
+</div>
