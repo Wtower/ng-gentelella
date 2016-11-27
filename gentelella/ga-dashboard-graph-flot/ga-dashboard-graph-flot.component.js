@@ -18,21 +18,21 @@ angular
     controller: [
       function GaGraphFlotController() {
         var self = this;
-        
+
         // Initialise
         self.$onInit = function () {
           if (!self.graphId) self.graphId = 'main-graph';
           self.plotted = false;
         };
-        
+
         // Run on every digest cycle
         // The only suitable event, because the id in template is set after any other event
         // This is why we call plot only once with self.plotted
         self.$doCheck = function () {
           var canvas = $('.' + self.graphId);
-          
+
           if (!self.plotted && self.graphData && canvas.length) {
-            
+
             // Transform mongo data to flot data
             var data = [];
             self.graphData.forEach(function (row) {
@@ -45,11 +45,11 @@ angular
               });
               data.push(series);
             });
-            
+
             function gd(year, month, day) {
-              return new Date(year, month - 1, day + 1).getTime();
+              return new Date(year, month - 1, day).getTime();
             }
-            
+
             // PLOT
             // !self.plotted && self.graphData && canvas.length && $.plot(canvas, self.graphData, {
             $.plot(canvas, data, {
@@ -96,7 +96,7 @@ angular
               },
               tooltip: false
             });
-            
+
             self.plotted = true;
           }
         };
