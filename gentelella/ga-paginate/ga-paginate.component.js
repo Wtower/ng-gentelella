@@ -5,7 +5,7 @@
 angular
   .module('gaPaginate')
   .component('gaPaginate', {
-    templateUrl: 'static/ng-gentelella/ga-paginate/ga-paginate.template.html',
+    templateUrl: 'ng-gentelella/gentelella/ga-paginate/ga-paginate.template.html',
     bindings: {
       paginateList: '<',
       paginateLimit: '=',

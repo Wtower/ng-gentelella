@@ -1,6 +1,6 @@
 {
   "name": "ng-gentelella",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Angular admin interface based on Gentelella bootstrap theme markup",
   "repository": {
     "type": "git",
@@ -16,15 +16,48 @@
     "url": "https://github.com/Wtower/ng-gentelella/issues"
   },
   "homepage": "https://github.com/Wtower/ng-gentelella#README",
-  "scripts": {},
+  "scripts": {
+    "prepublish": "gulp nsp",
+    "test": "gulp test"
+  },
   "dependencies": {
     "angular": "^1.5.7",
     "angular-animate": "^1.5.7",
     "angular-resource": "^1.5.7",
     "angular-route": "^1.5.7",
     "angular-sanitize": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
     "gentelella": "^1.3.0",
+    "jquery": "^2.2.4",
     "ng-file-upload": "^12.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "angular-mocks": "^1.5.7",
+    "chai": "^3.5.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-nsp": "^2.4.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "yargs": "^6.3.0"
+  }
 }

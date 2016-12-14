@@ -97,14 +97,17 @@ Use:
 
     npm install -S ng-gentelella
 
-Then include the `node_modules/ng-gentelella/gentelella` js files in your html or build system (eg gulp).
+### Static files
 
-Also make the above folder public or have a build system copy its html files in order for the templates to
-be available for Angular. Expose them as `/static/gentelella`:
+Built files are conveniently provided under the `build/` directory. These include all gentelella and ng-gentelella
+css and js files.
 
-```
-app.use('/static/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella', 'gentelella')));
-```
+Otherwise, include the `node_modules/ng-gentelella/gentelella` js files in your html or build system (eg gulp).
+It is recommended that you include the templates path `node_modules/*ng-gentelella/gentelella/**/*.html` using 
+[some html2js module]
+(http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file/41140644#41140644).
+Alternatively you can expose the template files as `/ng-gentelella` with
+`app.use('/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella')));`.
 
 ### Develop
 

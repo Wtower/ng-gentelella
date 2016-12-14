@@ -5,7 +5,7 @@
 angular
   .module('gaProgress')
   .component('gaProgress', {
-    templateUrl: 'static/ng-gentelella/ga-progress/ga-progress.template.html',
+    templateUrl: 'ng-gentelella/gentelella/ga-progress/ga-progress.template.html',
     bindings: {
       progressSize: '@',
       progressValue: '<'
