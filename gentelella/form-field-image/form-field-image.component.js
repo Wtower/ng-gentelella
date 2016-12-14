@@ -7,7 +7,7 @@
 angular
   .module('formFieldImage')
   .component('formFieldImage', {
-    templateUrl: 'static/ng-gentelella/form-field-image/form-field-image.template.html',
+    templateUrl: 'ng-gentelella/gentelella/form-field-image/form-field-image.template.html',
     bindings: {
       fieldId: '@',
       fieldLabel: '@',

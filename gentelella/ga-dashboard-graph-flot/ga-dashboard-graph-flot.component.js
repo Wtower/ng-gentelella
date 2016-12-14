@@ -5,7 +5,7 @@
 angular
   .module('gaDashboardGraphFlot')
   .component('gaDashboardGraphFlot', {
-    templateUrl: 'static/ng-gentelella/ga-dashboard-graph-flot/ga-dashboard-graph-flot.template.html',
+    templateUrl: 'ng-gentelella/gentelella/ga-dashboard-graph-flot/ga-dashboard-graph-flot.template.html',
     bindings: {
       graphTitle: '@',
       graphSubTitle: '@',

@@ -8,7 +8,7 @@
 angular
   .module('formFieldSelect')
   .component('formFieldSelect', {
-    templateUrl: 'static/ng-gentelella/form-field-select/form-field-select.template.html',
+    templateUrl: 'ng-gentelella/gentelella/form-field-select/form-field-select.template.html',
     bindings: {
       fieldId: '@',
       fieldLabel: '@',

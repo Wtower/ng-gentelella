@@ -7,7 +7,7 @@
 angular
   .module('gaPanelActions')
   .component('gaPanelActions', {
-    templateUrl: 'static/ng-gentelella/ga-panel-actions/ga-panel-actions.template.html',
+    templateUrl: 'ng-gentelella/gentelella/ga-panel-actions/ga-panel-actions.template.html',
     bindings: {
       actionForm: '<',
       actionCloseUrl: '@',
