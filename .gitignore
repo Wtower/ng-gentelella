@@ -11,5 +11,6 @@ coverage/
 # Gulp build intermediate files
 build/css/gentelella.*.css
 build/partials.js
-# .min files do not count in github language
-# https://github.com/github/linguist/blob/master/lib/linguist/vendor.yml#L56
+
+# Docs
+docs/_build/
