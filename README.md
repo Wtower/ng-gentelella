@@ -14,6 +14,8 @@ Easily create an administration interface using Angular components
 that are based on the markup by [Gentelella](https://github.com/puikinsh/gentelella)
 bootstrap template.
 
+![Gentelella Bootstrap Admin Template](https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/gentelella-admin-template-preview.jpg "Gentelella Theme Browser Preview")
+
 Features and limitations
 ------------------------
 
@@ -104,10 +106,11 @@ css and js files.
 
 Otherwise, include the `node_modules/ng-gentelella/gentelella` js files in your html or build system (eg gulp).
 It is recommended that you include the templates path `node_modules/*ng-gentelella/gentelella/**/*.html` using 
-[some html2js module]
-(http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file/41140644#41140644).
+[some html2js module](http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file/41140644#41140644).
+[Example gulpfile](https://github.com/Wtower/generator-makrina/blob/master/generators/app/templates/gulpfile.js).
+
 Alternatively you can expose the template files as `/ng-gentelella` with
-`app.use('/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella')));`.
+`app.use('/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella')));`. 
 
 ### Develop
 

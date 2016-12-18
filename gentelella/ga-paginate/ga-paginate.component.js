@@ -7,39 +7,103 @@ angular
   .component('gaPaginate', {
     templateUrl: 'ng-gentelella/gentelella/ga-paginate/ga-paginate.template.html',
     bindings: {
-      paginateList: '<',
-      paginateLimit: '=',
-      paginateSkip: '=',
-      paginateId: '@'
+      paginateId: '@', // a unique html id
+      paginatePage: '=', // current page number
+      paginateSize: '=', // current page size
+      paginateInitialSize: '<', // initial page size
+      paginateSizes: '<', // an array of page sizes
+      paginateCount: '<', // total number of records
+      paginateEllipsis: '@', // number of pages to show if too many
+      onPaginate: '&' // call on page change to fetch data
     },
     transclude: true,
     controller: [
+      /**
+       * Paginate controller
+       */
       function GaPaginateController() {
         var self = this;
-        self.items = '2';
 
-        self.range = function (max) {
+        /**
+         * Return an array of `len` items used for html ng-repeat range
+         * @param len
+         * @returns {Array}
+         */
+        self.range = function (len) {
           var range = [];
-          for (var i = 0; i < max; i++) range.push(i);
+          for (var i = 0; i < len; i++) range.push(i);
           return range;
         };
 
-        self.paginate = function (page) {
-          self.page = page || self.page || 1;
-          self.pages = Math.ceil(self.paginateList.length / self.items);
-          if (self.page < 1) self.page = 1;
-          if (self.page > self.pages) self.page = self.pages;
-          self.to = Math.min(self.page * self.items, self.paginateList.length);
-          self.from = (self.page * self.items) - self.items;
-          self.paginateLimit = self.items;
-          self.paginateSkip = self.from;
+        /**
+         * Initialize controller default values
+         */
+        self.$onInit = function () {
+          // distinguish because initial may need to be provided in parent by a third variable
+          self.paginateSize = self.paginateInitialSize;
+          self.paginateSizes = self.paginateSizes || [10, 25, 50, 100];
+          self.paginatePage = self.paginatePage || 1;
+          self.itemIdx = 0;
+          self.paginateEllipsis = self.paginateEllipsis || 5;
         };
 
-        self.paginate();
-
+        /**
+         * Re-calculate pagination on size or value change
+         */
         self.rePaginate = function () {
-          self.paginate(Math.ceil(self.from / self.items));
+          self.pages = Math.ceil(self.paginateCount / self.paginateSize);
+          self.paginate(Math.ceil(self.itemIdx / self.paginateSize), true);
         };
+
+        /**
+         * Because initialization happens before data is fetched and angular fails to detect the changes
+         * Keep a previous value to skip calculations if no change
+         */
+        self.$doCheck = function () {
+          if (self.previousCount != self.paginateCount) {
+            self.previousCount = self.paginateCount;
+            self.paginateEllipsis = parseInt(self.paginateEllipsis);
+            self.rePaginate();
+          }
+        };
+
+        /**
+         * Go to page
+         * @param page
+         * @param dataRefresh
+         */
+        self.paginate = function (page, dataRefresh) {
+          if (page < 1) page = 1;
+          if (page > self.pages) page = self.pages;
+          self.itemIdx = (page - 1) * self.paginateSize;
+          if (!dataRefresh && page == self.paginatePage) return;
+          self.paginatePage = page;
+          self.focus('reset');
+          self.onPaginate({
+            paginator: {
+              page: self.paginatePage,
+              page_size: self.paginateSize
+            }
+          });
+        };
+
+        /**
+         * Set low and high page numbers to show around current page with an ellipsis
+         * @param direction
+         */
+        self.focus = function (direction) {
+          if (direction == 'reset') {
+            self.lowEllipsis = Math.max(self.paginatePage - Math.floor(self.paginateEllipsis / 2), 1);
+            self.lowEllipsis = Math.min(self.lowEllipsis, Math.max(self.pages - self.paginateEllipsis, 1));
+          }
+          else if (direction == 'left') {
+            self.lowEllipsis = Math.max(self.lowEllipsis - self.paginateEllipsis, 1);
+          }
+          else if (direction == 'right') {
+            self.lowEllipsis = Math.min(self.lowEllipsis + self.paginateEllipsis, self.pages - self.paginateEllipsis);
+          }
+        }
+
       }
     ]
   });

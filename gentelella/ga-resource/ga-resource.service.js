@@ -31,6 +31,7 @@ angular
           return resource.get(options.getId, function(data) {
             if (options.callbacks) options.callbacks.next();
           }, function(error) {
+            console.log(error);
             $location.path(options.url);
             new PNotify({
               title: options.error404.title,
