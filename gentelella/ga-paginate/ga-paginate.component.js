@@ -78,9 +78,10 @@ angular
           if (page < 1) page = 1;
           if (page > self.pages) page = self.pages;
           self.itemIdx = (page - 1) * self.paginateSize;
-          if (!dataRefresh && page == self.paginatePage) return;
-          self.paginatePage = page;
           self.focus('reset');
+          if (!dataRefresh && page == self.paginatePage) return;
+          
+          self.paginatePage = page;
           self.onPaginate({
             paginator: {
               page: self.paginatePage,
