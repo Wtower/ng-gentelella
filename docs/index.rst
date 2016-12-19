@@ -11,13 +11,6 @@ are based on the markup by `Gentelella`_ bootstrap template.
 
 .. image:: images/gentelella-admin-template-preview.jpg
 
-Features and limitations
-------------------------
-
-The project offers a small number of components that aim to directly reduce the development time of an
-admin interface. It currently not yet offers a wide number of components to fully automate the
-development of a gentelella interface.
-
 .. toctree::
    :maxdepth: 1
    :caption: Contents
@@ -36,10 +29,22 @@ development of a gentelella interface.
    form-field-checkbox
    form-field-image
 
+Features and limitations
+------------------------
 
-Documentation indices and tables
---------------------------------
+The project offers a small number of components that aim to directly reduce the development time of an
+admin interface. It currently not yet offers a wide number of components to fully automate the
+development of a gentelella interface.
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Alternatives
+------------
+
+- angular2-webpack-starter-gentelella_
+- `commercial angular templates`_
+- `inspinia commercial template`_
+- ng-admin_: one of the most well developed angular admin with a configuration system that is too advanced for my taste.
+
+.. _angular2-webpack-starter-gentelella: https://github.com/kmkatsma/angular2-webpack-starter-gentelella
+.. _ng-admin: https://github.com/marmelab/ng-admin
+.. _commercial angular templates: https://colorlib.com/wp/angularjs-admin-templates/
+.. _inspinia commercial template: https://wrapbootstrap.com/theme/inspinia-responsive-admin-theme-WB0R5L90S

@@ -16,118 +16,12 @@ bootstrap template.
 
 ![Gentelella Bootstrap Admin Template](https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/gentelella-admin-template-preview.jpg "Gentelella Theme Browser Preview")
 
-Features and limitations
-------------------------
+Documentation
+-------------
 
-The project offers a small number of components that aim to directly reduce the development time of an
-admin interface. It currently not yet offers a wide number of components to fully automate the
-development of a gentelella interface.
+Full documentation provided at http://ng-gentelella.readthedocs.io/en/latest
 
-Components
-----------
+License
+-------
 
-### ga-panel
-
-This is a main component that generates a simple gentelella panel.
-
-[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-list/templates/_object-name_-list.template.html)
-
-### ga-panel-table-form
-
-`ga-panel-table-form` together with `ga-panel-table-form-body` offer a more advanced panel
-that can be used to display a table of records. Upon clicking on a record, an accordion with
-a form for that record opens.
-
-### ga-panel-actions
-
-This offers a small panel with basic form buttons: Save, Close/cancel, delete.
-
-[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-detail/templates/_object-name_-detail.template.html#L19)
-
-### ga-resource
-
-Automate the CRUD operations using gentelella's PNotify and default REST responses.
-
-[Example in factory](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-core-service/templates/_object-name_.service.js)
-
-[Example of factory use in controller](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-detail/templates/_object-name_-detail.component.js.ejs#L14)
-
-### ga-paginate
-
-Provide a list paginator.
-
-### ga-progress
-
-Render a progress bar.
-
-### ga-dashboard-counter
-
-Provide a large counter panel for dashboard as in 
-[Gentelella index2](https://colorlib.com/polygon/gentelella/index2.html). 
-
-[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-app/templates/dashboard/dashboard.template.html)
-
-### ga-dashboard-graph-flot
-
-Render a line graph panel as in 
-[Gentelella index](https://colorlib.com/polygon/gentelella/index.html). 
-
-### form-field-text
-
-Render a standard gentelella form textbox.
-
-[Example](https://github.com/Wtower/generator-makrina/blob/master/generators/angular-component-detail/templates/_object-name_-detail.template.html#L11)
-
-### form-field-select
-
-Render a gentelella form select box. Depending on the options provided this can be extended to multiple selection.
-
-### form-field-checkbox
-
-Render a checkbox.
-
-### form-field-image
-
-Provide an image upload field. This relies on `ng-file-upload`.
-
-How to use
-----------
-
-### Installation
-
-Use:
-
-    npm install -S ng-gentelella
-
-### Static files
-
-Built files are conveniently provided under the `build/` directory. These include all gentelella and ng-gentelella
-css and js files.
-
-Otherwise, include the `node_modules/ng-gentelella/gentelella` js files in your html or build system (eg gulp).
-It is recommended that you include the templates path `node_modules/*ng-gentelella/gentelella/**/*.html` using 
-[some html2js module](http://stackoverflow.com/questions/21103724/angular-directive-templateurl-relative-to-js-file/41140644#41140644).
-[Example gulpfile](https://github.com/Wtower/generator-makrina/blob/master/generators/app/templates/gulpfile.js).
-
-Alternatively you can expose the template files as `/ng-gentelella` with
-`app.use('/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella')));`. 
-
-### Develop
-
-In your application, render a gentelella default index page as you would.
-
-Replace the main page content markup with an angular `ng-view` as in [this example]
-(https://github.com/Wtower/generator-makrina/blob/v0.3.0/generators/app/templates/views/admin.ejs#L139).
-
-Then develop proper Angular dashboard, list and detail components 
-as you would [normally do](https://docs.angularjs.org/tutorial/step_04),
-and use the above components in their templates to automate development.
-
-Alternatives
-------------
-
-- [angular2-webpack-starter-gentelella](https://github.com/kmkatsma/angular2-webpack-starter-gentelella)
-- [ng-admin](https://github.com/marmelab/ng-admin): one of the most well developed angular admin with a
-  configuration system that is too advanced for my taste.
-- [commercial angular templates](https://colorlib.com/wp/angularjs-admin-templates/) and
-  [inspinia commercial template](https://wrapbootstrap.com/theme/inspinia-responsive-admin-theme-WB0R5L90S)
+MIT © [Wtower](https://github.com/Wtower)
