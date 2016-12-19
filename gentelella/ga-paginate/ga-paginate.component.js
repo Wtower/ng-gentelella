@@ -63,6 +63,7 @@ angular
          */
         self.$doCheck = function () {
           if (self.previousCount != self.paginateCount) {
+            self.paginateCount = parseInt(self.paginateCount);
             self.paginateEllipsis = parseInt(self.paginateEllipsis);
             self.rePaginate(self.previousCount);
             self.previousCount = self.paginateCount;
@@ -80,7 +81,7 @@ angular
           self.itemIdx = (page - 1) * self.paginateSize;
           self.focus('reset');
           if (!dataRefresh && page == self.paginatePage) return;
-          
+
           self.paginatePage = page;
           self.onPaginate({
             paginator: {
