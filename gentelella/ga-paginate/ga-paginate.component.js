@@ -49,21 +49,23 @@ angular
 
         /**
          * Re-calculate pagination on size or value change
+         * @param dataRefresh: true to fetch data
          */
-        self.rePaginate = function () {
+        self.rePaginate = function (dataRefresh) {
           self.pages = Math.ceil(self.paginateCount / self.paginateSize);
-          self.paginate(Math.ceil(self.itemIdx / self.paginateSize), true);
+          self.paginate(Math.ceil(self.itemIdx / self.paginateSize), dataRefresh);
         };
 
         /**
          * Because initialization happens before data is fetched and angular fails to detect the changes
          * Keep a previous value to skip calculations if no change
+         * Also fetch data only if a previousCount exists (not first) to avoid initial double fetch #16
          */
         self.$doCheck = function () {
           if (self.previousCount != self.paginateCount) {
-            self.previousCount = self.paginateCount;
             self.paginateEllipsis = parseInt(self.paginateEllipsis);
-            self.rePaginate();
+            self.rePaginate(self.previousCount);
+            self.previousCount = self.paginateCount;
           }
         };
 
@@ -102,7 +104,15 @@ angular
           else if (direction == 'right') {
             self.lowEllipsis = Math.min(self.lowEllipsis + self.paginateEllipsis, self.pages - self.paginateEllipsis);
           }
-        }
+        };
+
+        /**
+         * Provide the upper visible index number for use in template
+         * @returns {number}
+         */
+        self.itemUpperIdx = function () {
+          return Math.min(self.itemIdx + self.paginateSize, self.paginateCount);
+        };
 
       }
     ]

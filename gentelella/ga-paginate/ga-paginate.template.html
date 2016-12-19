@@ -2,12 +2,12 @@
   <div class="pull-left">
     <div class="dataTables_info" role="status" aria-live="polite">
       <label for="paginate-{{ $ctrl.paginateId }}">
-        {{ $ctrl.itemIdx + 1 }} to {{ $ctrl.itemIdx + $ctrl.paginateSize }} of {{ $ctrl.paginateCount }} |&nbsp;
+        {{ $ctrl.itemIdx + 1 }} to {{ $ctrl.itemUpperIdx() }} of {{ $ctrl.paginateCount }} |&nbsp;
       </label>
       <select id="paginate-{{ $ctrl.paginateId }}"
               aria-controls="datatable"
               class="input-xs"
-              ng-change="$ctrl.rePaginate()"
+              ng-change="$ctrl.rePaginate(true)"
               ng-model="$ctrl.paginateSize"
               ng-options="item for item in $ctrl.paginateSizes">
       </select>&nbsp;
