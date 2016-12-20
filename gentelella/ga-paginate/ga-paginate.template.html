@@ -1,4 +1,4 @@
-<div class="row" ng-hide="$ctrl.paginateSize > $ctrl.paginateCount">
+<div class="row" ng-hide="!$ctrl.paginateCount || $ctrl.paginateSize >= $ctrl.paginateCount">
   <div class="pull-left">
     <div class="dataTables_info" role="status" aria-live="polite">
       <label for="paginate-{{ $ctrl.paginateId }}">
