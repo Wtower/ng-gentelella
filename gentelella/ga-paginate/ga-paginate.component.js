@@ -40,11 +40,11 @@ angular
          */
         self.$onInit = function () {
           // distinguish because initial may need to be provided in parent by a third variable
-          self.paginateSize = self.paginateInitialSize;
+          self.paginateSize = parseInt(self.paginateInitialSize);
           self.paginateSizes = self.paginateSizes || [10, 25, 50, 100];
           self.paginatePage = self.paginatePage || 1;
           self.itemIdx = 0;
-          self.paginateEllipsis = self.paginateEllipsis || 5;
+          self.paginateEllipsis = parseInt(self.paginateEllipsis) || 5;
         };
 
         /**
