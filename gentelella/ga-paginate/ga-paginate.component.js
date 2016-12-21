@@ -49,6 +49,7 @@ angular
 
         /**
          * Re-calculate pagination on size or value change
+         * When user clicks, then force a fetch data
          * @param dataRefresh: true to fetch data
          */
         self.rePaginate = function (dataRefresh) {
@@ -65,7 +66,7 @@ angular
           if (self.previousCount != self.paginateCount) {
             self.paginateCount = parseInt(self.paginateCount);
             self.paginateEllipsis = parseInt(self.paginateEllipsis);
-            self.rePaginate(self.previousCount);
+            self.rePaginate();
             self.previousCount = self.paginateCount;
           }
         };
