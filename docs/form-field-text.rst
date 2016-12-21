@@ -20,11 +20,13 @@ Binding reference
 - ``field-pattern``: A regular expression **without surrounding slashes** to test the input validity against.
   Combine with ``field-form`` and ``field-name`` to allow Angular to validate (string)
 - ``field-alert``: The text to display if the field is invalid. Requires ``field-form`` and ``field-name`` (string)
+- ``field-model-options``: Additional `ng-model-options`_ to pass to the field (object)
 - ``field-value``: A controller variable to return the ``ng-model`` input value (variable)
 - ``on-change``: A callback function to call if value changes (function)
 
 .. _HTML input type: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 .. _Angular form: https://docs.angularjs.org/guide/forms
+.. _ng-model-options: https://docs.angularjs.org/api/ng/directive/ngModelOptions
 
 Controller
 ----------

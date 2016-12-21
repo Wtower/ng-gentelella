@@ -20,6 +20,7 @@ angular
       fieldForm: '=',
       fieldPattern: '@',
       fieldAlert: '@',
+      fieldModelOptions: '<',
       onChange: '&',
       fieldValue: '='
     },

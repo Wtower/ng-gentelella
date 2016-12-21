@@ -13,7 +13,8 @@
            ng-required="$ctrl.fieldRequired"
            ng-pattern="$ctrl.pattern"
            ng-change="$ctrl.onChange()"
-           ng-model="$ctrl.fieldValue">
+           ng-model="$ctrl.fieldValue"
+           ng-model-options="$ctrl.fieldModelOptions">
   </div>
   <div ng-if="$ctrl.fieldAlert" class="alert">{{ $ctrl.fieldAlert }}</div>
 </div>
