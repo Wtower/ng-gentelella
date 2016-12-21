@@ -7,6 +7,8 @@
                class="form-control input-sm"
                placeholder="Search"
                ng-model="$ctrl.panelQueryString"
+               ng-model-options="$ctrl.panelQueryModelOptions"
+               ng-change="$ctrl.onQueryChange({queryValue: $ctrl.panelQueryString})"
                aria-controls="datatable">
       </li>
       <li ng-if="$ctrl.panelAddRecordUrl">
