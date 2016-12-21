@@ -40,15 +40,16 @@ angular
          */
         self.$onInit = function () {
           // distinguish because initial may need to be provided in parent by a third variable
-          self.paginateSize = self.paginateInitialSize;
+          self.paginateSize = parseInt(self.paginateInitialSize);
           self.paginateSizes = self.paginateSizes || [10, 25, 50, 100];
           self.paginatePage = self.paginatePage || 1;
           self.itemIdx = 0;
-          self.paginateEllipsis = self.paginateEllipsis || 5;
+          self.paginateEllipsis = parseInt(self.paginateEllipsis) || 5;
         };
 
         /**
          * Re-calculate pagination on size or value change
+         * When user clicks, then force a fetch data
          * @param dataRefresh: true to fetch data
          */
         self.rePaginate = function (dataRefresh) {
@@ -65,7 +66,7 @@ angular
           if (self.previousCount != self.paginateCount) {
             self.paginateCount = parseInt(self.paginateCount);
             self.paginateEllipsis = parseInt(self.paginateEllipsis);
-            self.rePaginate(self.previousCount);
+            self.rePaginate();
             self.previousCount = self.paginateCount;
           }
         };
