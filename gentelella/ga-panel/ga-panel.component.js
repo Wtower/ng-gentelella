@@ -13,6 +13,8 @@ angular
       panelSubTitle: '@',
       panelQuery: '@',
       panelQueryString: '=',
+      panelQueryModelOptions: '<',
+      onQueryChange: '&',
       panelAddRecordUrl: '@'
     },
     transclude: true,
