@@ -37,11 +37,7 @@ angular
 
         // Initialise
         self.$onInit = function () {
-          if (!self.graphColours) self.graphColours = ['#3498DB', '#26B99A', '#9B59B6', '#BDC3C7', '#E74C3C'];
-          self.graphHoverColours = [];
-          for (var i = 0; i < self.graphColours.length; i++) {
-            self.graphHoverColours.push(rgba(self.graphColours[i], 0.8))
-          }
+          if (!self.graphId) self.graphId = 'main-graph';
         };
 
         // Reset plotted
@@ -56,22 +52,34 @@ angular
           var canvas = $('.' + self.graphId);
           if (self.plotted || !self.graphData || !canvas.length) return;
 
-          // Transform data
+          // Parse bindings
+          if (!self.graphColours) self.graphColours = ['#3498DB', '#26B99A', '#9B59B6', '#BDC3C7', '#E74C3C'];
+          self.graphHoverColours = [];
+          for (var i = 0; i < self.graphColours.length; i++) {
+            self.graphHoverColours.push(rgba(self.graphColours[i], 0.8))
+          }
+          self.graphMaxValues = parseInt(self.graphMaxValues) || 5;
+
+          // Transform data: allow only a max number of values and split into labels/data arrays for chart.js
           var labels = [];
           var data = [];
-          var maxValues = parseInt(self.graphMaxValues) || 1;
+          var lastItem = self.graphData[self.graphMaxValues - 1];
 
-          for (var i = 0; i < self.graphData.length; i++) {
+          for (i = 0; i < self.graphData.length; i++) {
             var item = self.graphData[i];
-            if (i < maxValues || maxValues <= 0) {
+            if (i < self.graphMaxValues || self.graphMaxValues <= 0) {
               if (!item.label) item.label = '?';
-              labels.push(item.label);
-              data.push(item.value);
             }
             else {
-              labels[maxValues - 1] = self.graphMaxEllipsis || 'All other';
-              data[maxValues - 1] += item.value;
+              lastItem.label = self.graphMaxEllipsis || 'All other';
+              lastItem.value += item.value;
+              self.graphData.splice(i--, 1);
             }
+          }
+          for (i = 0; i < self.graphData.length; i++) {
+            item = self.graphData[i];
+            labels.push(item.label);
+            data.push(item.value);
           }
 
           new Chart(canvas[0], {
