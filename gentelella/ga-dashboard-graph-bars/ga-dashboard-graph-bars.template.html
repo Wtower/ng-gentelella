@@ -1,0 +1,11 @@
+<ga-panel panel-title="{{ $ctrl.graphTitle }}" panel-sub-title="{{ $ctrl.graphSubTitle }}">
+  <h4>{{ $ctrl.graphHeading }}</h4>
+  <div class="widget_summary" ng-repeat="item in $ctrl.graphData">
+    <div class="w_left w_25">{{ item.lower }}-{{ item.upper }}</div>
+    <div class="w_center w_55">
+      <ga-progress progress-size="md" progress-value="{{ item.percent }}"></ga-progress>
+    </div>
+    <div class="w_right w_20 clearfix"><span>{{ item.count }}</span></div>
+  </div>
+  <div ng-transclude></div>
+</ga-panel>
