@@ -8,6 +8,6 @@ angular
     templateUrl: 'ng-gentelella/gentelella/ga-progress/ga-progress.template.html',
     bindings: {
       progressSize: '@',
-      progressValue: '<'
+      progressValue: '@'
     }
   });
