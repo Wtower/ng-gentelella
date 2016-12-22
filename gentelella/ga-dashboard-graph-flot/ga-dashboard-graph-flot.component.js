@@ -12,6 +12,7 @@ angular
       graphRange: '@',
       graphId: '@',
       graphLegendTitle: '@',
+      graphColours: '<',
       graphData: '<'
     },
     transclude: true,
@@ -22,11 +23,16 @@ angular
         // Initialise
         self.$onInit = function () {
           if (!self.graphId) self.graphId = 'main-graph';
+          if (!self.graphColours) self.graphColours = ['rgba(38, 185, 154, 0.38)', 'rgba(3, 88, 106, 0.38)'];
+        };
+
+        // Reset plotted
+        self.onChanges = function () {
           self.plotted = false;
         };
 
-        // Run on every digest cycle
-        // The only suitable event, because the id in template is set after any other event
+        // The only suitable event, because the id in template is set
+        // after any other event including onChanges
         // This is why we call plot only once with self.plotted
         self.$doCheck = function () {
           var canvas = $('.' + self.graphId);
@@ -74,17 +80,17 @@ angular
                 verticalLines: true,
                 hoverable: true,
                 clickable: true,
-                tickColor: "#d5d5d5",
+                tickColor: '#d5d5d5',
                 borderWidth: 1,
                 color: '#fff'
               },
-              colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
+              colors: self.graphColours,
               xaxis: {
-                tickColor: "rgba(51, 51, 51, 0.06)",
-                mode: "time",
-                tickSize: [1, "day"],
+                tickColor: 'rgba(51, 51, 51, 0.06)',
+                mode: 'time',
+                tickSize: [1, 'day'],
                 //tickLength: 10,
-                axisLabel: "Date",
+                axisLabel: 'Date',
                 axisLabelUseCanvas: true,
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
@@ -92,7 +98,7 @@ angular
               },
               yaxis: {
                 ticks: 8,
-                tickColor: "rgba(51, 51, 51, 0.06)"
+                tickColor: 'rgba(51, 51, 51, 0.06)'
               },
               tooltip: false
             });
