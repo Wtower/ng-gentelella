@@ -61,3 +61,4 @@ Code sample
         <ga-progress progress-value="$ctrl.subscriptionValidity"></ga-progress>
       </div>
     </ga-dashboard-graph-flot>
+
