@@ -60,24 +60,21 @@ angular
           }
           self.graphMaxValues = parseInt(self.graphMaxValues) || 5;
 
-          // Transform data: allow only a max number of values and split into labels/data arrays for chart.js
+          // Transform data: allow only a max number of values
+          var lastItem = self.graphData[self.graphMaxValues - 1];
+          for (i = self.graphMaxValues; 0 < i && i < self.graphData.length; i++) {
+            var item = self.graphData[i];
+            lastItem.label = self.graphMaxEllipsis || 'All other';
+            lastItem.value += item.value;
+            self.graphData.splice(i--, 1);
+          }
+
+          // Transform data: split into labels/data arrays for chart.js
           var labels = [];
           var data = [];
-          var lastItem = self.graphData[self.graphMaxValues - 1];
-
-          for (i = 0; i < self.graphData.length; i++) {
-            var item = self.graphData[i];
-            if (i < self.graphMaxValues || self.graphMaxValues <= 0) {
-              if (!item.label) item.label = '?';
-            }
-            else {
-              lastItem.label = self.graphMaxEllipsis || 'All other';
-              lastItem.value += item.value;
-              self.graphData.splice(i--, 1);
-            }
-          }
           for (i = 0; i < self.graphData.length; i++) {
             item = self.graphData[i];
+            if (!item.label) item.label = '?';
             labels.push(item.label);
             data.push(item.value);
           }

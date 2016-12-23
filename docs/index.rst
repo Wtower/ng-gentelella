@@ -25,6 +25,7 @@ are based on the markup by `Gentelella`_ bootstrap template.
    ga-dashboard-counter
    ga-dashboard-graph-flot
    ga-dashboard-graph-bars
+   ga-dashboard-graph-chart
    form-field-text
    form-field-select
    form-field-checkbox
