@@ -56,7 +56,7 @@
              aria-controls="datatable"
              data-dt-idx="0"
              tabindex="0"
-             ng-show="$ctrl.lowEllipsis < $ctrl.pages - $ctrl.paginateEllipsis"
+             ng-show="$ctrl.lowEllipsis <= $ctrl.pages - $ctrl.paginateEllipsis"
              ng-click="$ctrl.focus('right')">...</a>
         </li>
         <li class="paginate_button" ng-class="{disabled: $ctrl.paginatePage == $ctrl.pages}">
