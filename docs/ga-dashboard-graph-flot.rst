@@ -41,7 +41,10 @@ The component allows the transclude of markup for the legend column body.
 Controller
 ----------
 
-The controller calls initializes the Flot graph appropriately.
+The controller:
+
+- Transforms the data from the above more common JSON format to Flot format.
+- Initializes the Flot graph appropriately.
 
 Code sample
 -----------

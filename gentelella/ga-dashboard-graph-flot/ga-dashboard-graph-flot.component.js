@@ -23,7 +23,6 @@ angular
         // Initialise
         self.$onInit = function () {
           if (!self.graphId) self.graphId = 'main-graph';
-          if (!self.graphColours) self.graphColours = ['rgba(38, 185, 154, 0.38)', 'rgba(3, 88, 106, 0.38)'];
         };
 
         // Reset plotted
@@ -38,6 +37,9 @@ angular
           var canvas = $('.' + self.graphId);
 
           if (!self.plotted && self.graphData && canvas.length) {
+
+            // Parse bindings
+            if (!self.graphColours) self.graphColours = ['rgba(38, 185, 154, 0.38)', 'rgba(3, 88, 106, 0.38)'];
 
             // Transform mongo data to flot data
             var data = [];
