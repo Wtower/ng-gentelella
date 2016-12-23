@@ -15,6 +15,7 @@ Binding reference
 - ``graph-range``: The date range to present (string)
 - ``graph-id``: A unique HTML id for jquery reference, default ``main-graph`` (string)
 - ``graph-legend-title``: The title of the legent column (string)
+- ``graph-colours``: An array of strings with colours for the series, defaults to gentelella colours (array)
 - ``graph-data``: The main graph data (array)
 
 Regarding the graph data. Gentelella uses the `Flot`_ graph library that requires that data is sorted by date.
@@ -40,7 +41,10 @@ The component allows the transclude of markup for the legend column body.
 Controller
 ----------
 
-The controller calls initializes the Flot graph appropriately.
+The controller:
+
+- Transforms the data from the above more common JSON format to Flot format.
+- Initializes the Flot graph appropriately.
 
 Code sample
 -----------

@@ -57,6 +57,11 @@ ga-panel.table, ga-panel-table-form
       &:hover
         background: #f5f5f5
 
+$fixed-heights: 200, 320, 390
+@each $height in $fixed-heights
+  .fixed_height_#{$height} .x_panel
+    height: #{$height}px
+
 ga-paginate
   .dataTables_info
     width: auto

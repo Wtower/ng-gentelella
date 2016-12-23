@@ -1,0 +1,30 @@
+<ga-panel panel-title="{{ $ctrl.graphTitle }}" panel-sub-title="{{ $ctrl.graphSubTitle }}">
+  <table class="" style="width:100%">
+    <tbody><tr>
+      <th style="width:37%;">
+        <p>Top 5</p>
+      </th>
+      <th>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+          <p>{{ $ctrl.graphHeading }}</p>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <canvas ng-class="$ctrl.graphId" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+      </td>
+      <td>
+        <table class="tile_info">
+          <tbody>
+          <tr ng-repeat="item in $ctrl.graphData | limitTo: $ctrl.graphMaxValues">
+            <td><p><i class="fa fa-square" ng-style="{color: $ctrl.graphColours[$index]}"></i>{{ item.label }}</p></td>
+            <td>{{ item.value }}</td>
+          </tr>
+          </tbody></table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div ng-transclude></div>
+</ga-panel>

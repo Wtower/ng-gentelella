@@ -80,7 +80,7 @@ angular
           if (page < 1) page = 1;
           if (page > self.pages) page = self.pages;
           self.itemIdx = (page - 1) * self.paginateSize;
-          self.focus('reset');
+          self.focus('reset', page);
           if (!dataRefresh && page == self.paginatePage) return;
 
           self.paginatePage = page;
@@ -94,18 +94,19 @@ angular
 
         /**
          * Set low and high page numbers to show around current page with an ellipsis
-         * @param direction
+         * @param direction: reset / left / right
+         * @param page: pass the new page because the self.paginatePage may not yet be updated
          */
-        self.focus = function (direction) {
-          if (direction == 'reset') {
-            self.lowEllipsis = Math.max(self.paginatePage - Math.floor(self.paginateEllipsis / 2), 1);
+        self.focus = function (direction, page) {
+          if (direction == 'reset') { // a new page is up
+            self.lowEllipsis = Math.max(page - Math.floor(self.paginateEllipsis / 2), 1);
             self.lowEllipsis = Math.min(self.lowEllipsis, Math.max(self.pages - self.paginateEllipsis, 1));
           }
-          else if (direction == 'left') {
+          else if (direction == 'left') { // the left ellipsis is pressed
             self.lowEllipsis = Math.max(self.lowEllipsis - self.paginateEllipsis, 1);
           }
-          else if (direction == 'right') {
-            self.lowEllipsis = Math.min(self.lowEllipsis + self.paginateEllipsis, self.pages - self.paginateEllipsis);
+          else if (direction == 'right') { // the right ellipsis is pressed
+            self.lowEllipsis = Math.min(self.lowEllipsis + self.paginateEllipsis, self.pages - self.paginateEllipsis + 1);
           }
         };
 
