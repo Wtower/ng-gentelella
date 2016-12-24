@@ -1,10 +1,9 @@
 ga-dashboard-graph-bars
 =======================
 
-Render a bars graph in panel as in `Gentelella index`_. The graph consists of ga-progress_ bars.
+Render a bars graph in panel as in `Gentelella index`_. The graph consists of :doc:`ga-progress` bars.
 
 .. _Gentelella index: https://colorlib.com/polygon/gentelella/index.html
-.. _ga-progress: ga-progress.html
 
 .. image:: images/ga-dashboard-graph-bars.png
 

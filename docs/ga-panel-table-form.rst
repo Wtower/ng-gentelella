@@ -1,11 +1,9 @@
 ga-panel-table-form
 ===================
 
-``ga-panel-table-form`` together with ``ga-panel-table-form-body`` offer a more advanced `ga-panel`_
+``ga-panel-table-form`` together with ``ga-panel-table-form-body`` offer a more advanced :doc:`ga-panel`
 that can be used to display a table of records. Upon clicking on a record, an accordion with
 a form for that record opens.
-
-.. _ga-panel: ga-panel.html
 
 .. image:: images/ga-panel-table-form.png
 

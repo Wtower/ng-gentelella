@@ -16,9 +16,7 @@ Binding reference
 Requires
 --------
 
-Requires a parent `ga-panel`_.
-
-.. _ga-panel: ga-panel.html
+Requires a parent :doc:`ga-panel`.
 
 Transclude
 ----------
