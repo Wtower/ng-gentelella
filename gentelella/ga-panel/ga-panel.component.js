@@ -17,7 +17,9 @@ angular
       onQueryChange: '&',
       panelAddRecordUrl: '@'
     },
-    transclude: true,
+    transclude: {
+      toolbar: '?panelToolbar'
+    },
     controller: [
       function GaPanelController() {
         panelToolbox();

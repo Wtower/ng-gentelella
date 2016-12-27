@@ -23,6 +23,9 @@ Transclude
 
 The component will present any content transcluded.
 
+It also allows the optional transclude element ``panel-toolbar`` for presenting additional buttons
+(v0.2.5, see examples below).
+
 Controller
 ----------
 
@@ -42,6 +45,10 @@ Template:
             panel-query="true"
             panel-query-string="$ctrl.queryValue"
             panel-add-record-url="#!/products/add">
+    <panel-toolbar>
+      <a href="" title="Some button"><i class="fa fa-modx"></i></a>
+      <a href="" title="And another"><i class="fa fa-random"></i></a>
+    </panel-toolbar>
     <table class="table table-hover dataTable">
       <thead>
       <tr>

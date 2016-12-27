@@ -11,6 +11,7 @@
                ng-change="$ctrl.onQueryChange({queryValue: $ctrl.panelQueryString})"
                aria-controls="datatable">
       </li>
+      <li ng-transclude="toolbar" class="toolbar"></li>
       <li ng-if="$ctrl.panelAddRecordUrl">
         <a href="{{ $ctrl.panelAddRecordUrl }}" title="Add record"><i class="fa fa-plus"></i></a></li>
       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
