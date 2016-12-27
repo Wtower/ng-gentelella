@@ -18,6 +18,7 @@ tr
       padding-bottom: 0
       padding-top: 0
 
+
 .view-frame
   &.ng-enter
     animation: 0.7s fade-in
@@ -34,3 +35,14 @@ tr
     opacity: 1
   to
     opacity: 0
+
+
+.spinning
+  animation: spin 1s infinite linear
+
+@keyframes spin
+  from
+    transform: scale(1) rotate(0deg)
+
+  to
+    transform: scale(1) rotate(360deg)
