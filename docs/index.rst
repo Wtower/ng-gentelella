@@ -30,6 +30,7 @@ are based on the markup by `Gentelella`_ bootstrap template.
    form-field-select
    form-field-checkbox
    form-field-image
+   animations
 
 Features and limitations
 ------------------------
