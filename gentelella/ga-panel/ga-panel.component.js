@@ -15,7 +15,9 @@ angular
       panelQueryString: '=',
       panelQueryModelOptions: '<',
       onQueryChange: '&',
-      panelAddRecordUrl: '@'
+      panelAddRecordUrl: '@',
+      panelAllowCollapse: '@',
+      panelAllowClose: '@'
     },
     transclude: {
       toolbar: '?panelToolbar'
